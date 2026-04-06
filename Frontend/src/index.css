@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Primary | Deep Space Palette */
+  --space-900: #01161e; /* Deepest blue/black */
+  --space-700: #124559; /* Navy */
+  --space-500: #598392; /* Teal */
+  --space-300: #aec3b0; /* Light sage/mint */
+  --space-100: #eff6e0; /* Off-white */
+
+  /* Action | Heat of Battle Palette */
+  --battle-900: #4f000b; /* Deep maroon */
+  --battle-700: #720026; /* Crimson */
+  --battle-500: #ce4257; /* Bright red */
+  --battle-300: #ff7f51; /* Orange */
+  --battle-100: #ff9b54; /* Light orange */
+
+  /* Neutrals & UI Elements */
+  --bg-color: var(--space-900);
+  --text-main: var(--space-100);
+  --text-muted: var(--space-300);
+  --card-bg: rgba(18, 69, 89, 0.4);
+  --glass-border: rgba(174, 195, 176, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(1, 22, 30, 0.4);
+
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-pill {
+  background: rgba(89, 131, 146, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-pill:hover {
+  background: rgba(89, 131, 146, 0.3);
+  border-color: var(--space-300);
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--space-500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--space-300);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--space-100), var(--space-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-battle {
+  background: linear-gradient(135deg, var(--battle-100), var(--battle-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button & Interactives */
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--battle-500), var(--battle-300));
+  color: var(--space-100);
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(206, 66, 87, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(206, 66, 87, 0.6);
+  background: linear-gradient(135deg, var(--battle-300), var(--battle-100));
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Layout utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}

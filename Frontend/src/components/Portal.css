@@ -1,0 +1,124 @@
+/* Portal.css - Shared high-end styles for Auth and Settings modals */
+
+.portal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(1, 22, 30, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.portal-modal {
+  background: rgba(18, 69, 89, 0.2);
+  border: 1px solid rgba(174, 195, 176, 0.2);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(206, 66, 87, 0.1);
+  position: relative;
+  overflow: hidden;
+  max-width: 90%;
+  width: 100%;
+}
+
+.portal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.portal-close-btn:hover {
+  color: var(--text-main);
+  background: rgba(174, 195, 176, 0.1);
+}
+
+/* Common form elements */
+.portal-input-group {
+  position: relative;
+  width: 100%;
+}
+
+.portal-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3rem;
+  border-radius: 12px;
+  background: rgba(174, 195, 176, 0.08);
+  border: 1px solid rgba(174, 195, 176, 0.15);
+  color: white;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.portal-input:focus {
+  border-color: var(--battle-500);
+  background: rgba(174, 195, 176, 0.12);
+  box-shadow: 0 0 15px rgba(206, 66, 87, 0.1);
+}
+
+.portal-input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.portal-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portal-btn.btn-primary {
+  background: linear-gradient(135deg, var(--battle-500), var(--battle-400));
+  color: white;
+  border: none;
+}
+
+.portal-btn.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(206, 66, 87, 0.4);
+}
+
+.portal-btn.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.portal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

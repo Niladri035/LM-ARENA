@@ -1,0 +1,112 @@
+.leaderboard-wrapper {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 4rem;
+}
+
+.leaderboard-header {
+  margin-bottom: 2rem;
+}
+
+.leaderboard-container {
+  padding: 1.5rem;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.leaderboard-row {
+  transition: background 0.2s ease;
+}
+
+.leaderboard-row:hover {
+  background: rgba(174, 195, 176, 0.05);
+}
+
+.leaderboard-table td {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(174, 195, 176, 0.1);
+}
+
+.leaderboard-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rank-col {
+  width: 10%;
+  font-weight: bold;
+  color: var(--text-muted);
+}
+
+.gold-medal {
+  color: #fbbf24;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+  font-size: 1.125rem;
+}
+
+.silver-medal {
+  color: #94a3b8;
+  text-shadow: 0 0 10px rgba(148, 163, 184, 0.4);
+  font-size: 1.125rem;
+}
+
+.rank-first td {
+  background: rgba(251, 191, 36, 0.04);
+}
+
+.model-col {
+  width: 40%;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.elo-col {
+  width: 15%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.win-col {
+  width: 15%;
+}
+
+.cost-col {
+  width: 20%;
+  font-size: 0.875rem;
+}
+
+.tier-low {
+  color: #34d399; /* Green for cheap */
+}
+
+.tier-medium {
+  color: #fbbf24; /* Yellow for medium */
+}
+
+.tier-high {
+  color: #f87171; /* Red for high */
+}
+
+/* Utilities found in Leaderboard but not tailwind initialized */
+.text-center { text-align: center; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mt-14 { margin-top: 3.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.font-bold { font-weight: 700; }
+.text-sm { font-size: 0.875rem; }

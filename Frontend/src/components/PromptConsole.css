@@ -1,0 +1,133 @@
+.console-wrapper {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.console-container {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.console-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--space-300);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.console-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.console-input {
+  width: 100%;
+  background: rgba(1, 22, 30, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--text-main);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.console-input:focus {
+  outline: none;
+  border-color: var(--space-500);
+  box-shadow: 0 0 0 2px rgba(89, 131, 146, 0.2);
+}
+
+.console-input::placeholder {
+  color: rgba(174, 195, 176, 0.5);
+}
+
+.console-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.model-selectors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.model-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.model-badge.mistral {
+  border-color: var(--space-500);
+  color: var(--space-300);
+}
+
+.model-badge.cohere {
+  border-color: var(--space-500);
+  color: var(--space-300);
+}
+
+.add-model-btn {
+  font-size: 0.75rem;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.battle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.battle-btn.loading {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Suggestion Box (Yellow tint for ideas) */
+.suggestion-box {
+  background: rgba(153, 102, 0, 0.15);
+  border: 1px solid rgba(255, 155, 84, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  backdrop-filter: blur(8px);
+}
+
+.suggestion-icon {
+  font-size: 1rem;
+}
+
+.suggestion-text {
+  color: rgba(255, 246, 224, 0.8);
+  line-height: 1.4;
+}
+
+.suggestion-highlight {
+  color: var(--battle-100);
+  font-weight: 600;
+}

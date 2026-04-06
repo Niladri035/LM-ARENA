@@ -1,0 +1,90 @@
+/* FlickerLoader.css */
+
+.flicker-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #01161e; /* Match theme deep space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dots-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.loader-dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.loader-dot::after {
+  content: '';
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  background: inherit;
+  filter: blur(15px);
+  opacity: 0.4;
+  animation: pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.3; }
+  to { transform: scale(1.4); opacity: 0.6; }
+}
+
+.loader-text {
+  display: flex;
+  gap: 0.25rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.char {
+  display: inline-block;
+  animation: flicker-text 3s infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.char:nth-child(1) { animation-delay: 0.1s; }
+.char:nth-child(2) { animation-delay: 0.2s; }
+.char:nth-child(3) { animation-delay: 0.3s; }
+.char:nth-child(4) { animation-delay: 0.4s; }
+.char:nth-child(5) { animation-delay: 0.5s; }
+.char:nth-child(6) { animation-delay: 0.6s; }
+.char:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes flicker-text {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.3;
+    filter: blur(4px);
+  }
+}

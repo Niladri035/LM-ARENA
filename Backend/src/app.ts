@@ -21,10 +21,10 @@ app.get('/', async (req, res) => {
     console.log("📥 GET / request received");
     try {
         const result = await runGraph("Write an code for Factorial function in js")
-        console.log("✅ Graph execution successful");
+        console.log(" Graph execution successful");
         res.json(result)
     } catch (error: any) {
-        console.error("❌ Error running graph:", error.message || error);
+        console.error(" Error running graph:", error.message || error);
         res.status(500).json({ error: error.message || "Failed to run graph" });
     }
 })

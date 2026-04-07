@@ -41,7 +41,7 @@ app.post("/invoke", async (req, res) => {
             result
         });
     } catch (error: any) {
-        console.error("❌ Error in /invoke:", error.message || error);
+        console.error(" Error in /invoke:", error.message || error);
         res.status(500).json({
             message: "Failed to execute AI battle",
             success: false,

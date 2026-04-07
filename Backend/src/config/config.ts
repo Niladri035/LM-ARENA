@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Validate required environment variables at startup
 const requiredVars = ['GOOGLE_API_KEY', 'MISTRAL_API_KEY', 'COHERE_API_KEY'] as const;
 
 for (const varName of requiredVars) {

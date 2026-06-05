@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from './api';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Background from './components/Background';
 import Navbar from './components/Navbar';
@@ -40,7 +40,7 @@ function App() {
     setResults(null);
     
     try {
-      const response = await axios.post('http://localhost:3000/invoke', {
+      const response = await api.post('/invoke', {
         input: promptText
       });
       
@@ -51,7 +51,7 @@ function App() {
       // Persist battle results to the database if user is logged in
       if (user && user.id) {
         try {
-          await axios.post('http://localhost:3000/api/save-battle', {
+          await api.post('/api/save-battle', {
             userId: user.id,
             promptText: promptText,
             results: resData

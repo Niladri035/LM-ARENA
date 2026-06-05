@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import Header from '../components/Header';
 import PromptConsole from '../components/PromptConsole';
 import BattleArena from '../components/BattleArena';
@@ -17,7 +17,7 @@ const ArenaPage = ({
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/leaderboard');
+        const res = await api.get('/api/leaderboard');
         setLeaderboardData(res.data);
       } catch (err) {
         console.error("Failed to sync leaderboard:", err);

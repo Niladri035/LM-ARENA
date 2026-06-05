@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { History, Zap, MessageSquare } from 'lucide-react';
 
 const AboutPage = () => {
@@ -9,7 +9,7 @@ const AboutPage = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/history');
+        const res = await api.get('/api/history');
         setHistory(res.data);
       } catch (err) {
         console.error("Failed to fetch history:", err);

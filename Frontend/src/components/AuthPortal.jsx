@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
+import api from '../api';
 import gsap from 'gsap';
 import { X, Mail, Lock, User, Bot, ArrowRight, Loader2 } from 'lucide-react';
 import './Portal.css';
@@ -40,7 +40,7 @@ const AuthPortal = ({ isOpen, onClose, onAuthSuccess }) => {
 
     try {
       const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-      const response = await axios.post(`http://localhost:3000${endpoint}`, formData);
+      const response = await api.post(endpoint, formData);
       
       if (response.data.token) {
         localStorage.setItem('arena_token', response.data.token);

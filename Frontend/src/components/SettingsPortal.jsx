@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { X, Shield, User, Bell, Palette, Globe, Save } from 'lucide-react';
 import './Portal.css'; 
 
@@ -21,7 +21,7 @@ const SettingsPortal = ({ isOpen, onClose, user, onUpdateSuccess }) => {
     setIsSaving(true);
     setMessage(null);
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/update', {
+      const response = await api.post('/api/auth/update', {
         id: user.id,
         name,
         email

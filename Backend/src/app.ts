@@ -3,11 +3,12 @@ import runGraph from "./ai/graph.ai.js"
 import cors from "cors"
 import apiRoutes from "./routes/api.js"
 import authRoutes from "./routes/auth.js"
+import config from "./config/config.js";
 
 const app = express();
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: config.CORS_ORIGIN,
     methods: ["GET", "POST"],
     credentials: true,
 }))

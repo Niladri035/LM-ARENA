@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { Link } from 'react-router-dom';
 import { History, ArrowRight, Bot, Zap, Clock } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const UserHistoryPage = ({ user }) => {
     if (user && user.id) {
       const fetchHistory = async () => {
         try {
-          const res = await axios.get(`http://localhost:3000/api/history/user/${user.id}`);
+          const res = await api.get(`/api/history/user/${user.id}`);
           setHistory(res.data);
         } catch (err) {
           console.error("Failed to fetch personal history:", err);

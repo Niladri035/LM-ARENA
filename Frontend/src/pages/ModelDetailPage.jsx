@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Zap, Shield, Cpu, Activity, Info } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const ModelDetailPage = () => {
   useEffect(() => {
     const fetchModel = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/models/${id}`);
+        const res = await api.get(`/api/models/${id}`);
         setModel(res.data);
       } catch (err) {
         console.error("Failed to fetch model details:", err);

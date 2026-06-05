@@ -7,9 +7,26 @@ import config from "./config/config.js";
 
 const app = express();
 app.use(express.json())
+
+// Allow multiple origins — local dev + any onrender.com deployment
+const allowedOrigins = [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    config.CORS_ORIGIN,           // from env var
+    'https://lm-arena-5.onrender.com',  // production frontend
+].filter(Boolean);
+
 app.use(cors({
-    origin: config.CORS_ORIGIN,
-    methods: ["GET", "POST"],
+    origin: (origin, callback) => {
+        // Allow requests with no origin (mobile apps, curl, etc.)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin) || origin.endsWith('.onrender.com')) {
+            callback(null, true);
+        } else {
+            callback(new Error(`CORS blocked: ${origin}`));
+        }
+    },
+    methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
 }))
 

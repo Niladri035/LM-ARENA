@@ -22,7 +22,8 @@ Frontend/*.log
 Backend/test_output.txt
 Backend/test-output.txt
 Backend/model-test-results.txt
-Backend/*.json
+Backend/all-models.json
+Backend/invoke_res.json
 
 # OS-specific
 .DS_Store

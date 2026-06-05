@@ -25,6 +25,7 @@ router.post('/register', async (req, res) => {
       user: { id: user._id, name: user.name, email: user.email, tier: user.tier }
     });
   } catch (error: any) {
+    console.error('[POST /register] Error:', error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -51,6 +52,7 @@ router.post('/login', async (req, res) => {
       user: { id: user._id, name: user.name, email: user.email, tier: user.tier }
     });
   } catch (error: any) {
+    console.error('[POST /login] Error:', error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -75,6 +77,7 @@ router.post('/update', async (req, res) => {
       user: { id: user._id, name: user.name, email: user.email, tier: user.tier }
     });
   } catch (error: any) {
+    console.error('[POST /update] Error:', error);
     res.status(500).json({ error: error.message });
   }
 });
